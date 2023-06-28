@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Sample</title>
+</head>
+<body>
+    <h1>Welcome to my site, {{abc}}</h1>
+    {{prop_name}}
+    {{prop_name[0]}}
+    {{prop_name[0:3]}}
+    {{cat['cat_name']}}
+    {{my_list}}
+    <ul>
+        {% for element in my_list %}
+            <li>{{element}}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for element in cats %}
+            <li>{{element}}</li>
+        {% endfor %}
+    </ul>
+    {% if 'Ginger' in cats %}
+    <p>Found you ginger</p>
+    {% else %}
+    <p>You got me!</p>
+    {% endif %}
+</body>
+</html>
+{% endblock %}
